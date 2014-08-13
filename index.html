@@ -1,11 +1,17 @@
 <head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
 <script>
+
+// Fruit
+
 var fruit = ["apple","orange","plum"];
 
 
+// organization 
 var organization ={
       people : 
-        [
+        [ 
             {
                 name: "david",
                 title: "programmer",
@@ -18,27 +24,49 @@ var organization ={
                 title: "graphic designer",
                 fruit: ["plum"]
 
+            },
+            {
+                name: "Mary",
+                title: "graphic designer",
+                fruit: ["apple","kiwi"]
+
+            }
+            ,
+            {
+                name: "jeff",
+                title: "Manager",
+                fruit: ["kumquat"]
+
             }
 
 
-        ]
 
+        ]
+    
+}
+
+console.log(organization);
+
+
+function MakeTheList(){
+    $('#ourList').html('');
+    organization.people.forEach(function(e, i){
+        
+        
+
+            $('#ourList').append("<li>"+e.name+ " | " + e.title);
+            e.fruit.forEach(function(e2, i2){
+
+             $('#ourList').append(e2)
+
+            });
+
+            $('#ourList').append('</li>')
+    });
 }
 
 
-organization.people.forEach(function(e, i){
-    console.log(e, i);
-
-
-});
-
-
-
-
 </script>
-
-
-
 
 </head>
 
